@@ -5,7 +5,7 @@
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "nixpkgs/nixos-unstable";
     easyps.url = "github:justinwoo/easy-purescript-nix";
-    pslua.url = "github:Unisay/purescript-lua";
+    pslua.url = "github:purescript-lua/purescript-lua";
   };
 
   outputs = { self, nixpkgs, flake-utils, easyps, pslua }:
