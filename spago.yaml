@@ -1,0 +1,32 @@
+package:
+  name: lua-example
+  dependencies:
+    - console
+    - effect
+    - lua-ngx
+    - prelude
+  test:
+    main: Test.Main
+    dependencies:
+      - console
+      - effect
+      - prelude
+workspace:
+  # The published purescript-lua package set (registry baseline with the Lua FFI
+  # forks overlaid). See https://github.com/purescript-lua/purescript-lua-package-sets
+  packageSet:
+    url: https://github.com/purescript-lua/purescript-lua-package-sets/releases/download/psc-0.15.15-20260624/packages.json
+  # pslua as a first-class backend: `spago build` emits CoreFn and then runs this
+  # command, linking the app into web/main.lua, which OpenResty serves via
+  # content_by_lua_file (see web/conf/nginx.conf and scripts/serve).
+  backend:
+    cmd: pslua
+    args:
+      - --foreign-path
+      - .
+      - --ps-output
+      - output
+      - --lua-output-file
+      - web/main.lua
+      - --entry
+      - Main.main

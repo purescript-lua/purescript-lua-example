@@ -67,8 +67,7 @@ M.Effect_Lazy_applyEffect = PSLUA_runtime_lazy("applyEffect")(function()
     Functor0 = function() return M.Effect_Lazy_functorEffect(0) end
   }
 end)
-return (function(dictBind)
-  return M.Control_Bind_bind(dictBind)
-end)(M.Effect_bindEffect)(M.Lua_Ngx_Http_Status_foreign.set(M.Lua_Ngx_Http_Status_foreign.ok))(function(  )
-  return (function(msg) return function() ngx.say(msg) end end)("Hello from \"PureScript/Lua\"!")
+return (function()
+  local _ = M.Lua_Ngx_Http_Status_foreign.set(M.Lua_Ngx_Http_Status_foreign.ok)()
+  return (function(msg) return function() ngx.say(msg) end end)("Hello from \"PureScript/Lua\"!")()
 end)()

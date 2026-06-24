@@ -1,6 +1,6 @@
 # Example project for the purescript-lua
 
-This project exists to demonstrate usage of the [PureScript compiler backend for Lua](https://github.com/Unisay/purescript-lua).
+This project exists to demonstrate usage of the [PureScript compiler backend for Lua](https://github.com/purescript-lua/purescript-lua).
 
 One possible usage of Lua scripts is within the [NGINX](https://www.nginx.com/resources/wiki/modules/lua/)
 server, one can implement a backend application serving HTTP requests.
